@@ -93,7 +93,7 @@ Landing.getLayout = (page, pageProps) => (
     home
     menu={singleMenu.ai}
     footerDeco={FooterDeco}
-    hideFooter={true}
+    hideFooter={false}
     {...pageProps}
   >
     {page}

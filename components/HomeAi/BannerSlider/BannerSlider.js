@@ -47,6 +47,8 @@ function BannerSlider() {
     infinite: false,
     autoplay: false,
     cssEase: 'ease-out',
+    draggable: false,
+    swipe: false,
     responsive: [
       /*
       {

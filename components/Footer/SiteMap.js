@@ -30,18 +30,8 @@ function Copyright() {
 const footers = [
   {
     title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
-    link: ['#team', '#history', '#contact-us', '#locations'],
-  },
-  {
-    title: 'Resources',
-    description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-    link: ['#resource', '#resource-name', '#another-resource', '#final-resource'],
-  },
-  {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
-    link: ['#privacy-policy', '#terms-of-use'],
+    description: ['spekulus.mirror@gmail.com'],
+    link: ['mailto:spekulus.mirror@gmail.com'],
   },
 ];
 
@@ -76,71 +66,25 @@ function Footer(props) {
           </Grid>
           <Grid item xs={12} md={6}>
             <Grid container justifyContent="space-evenly">
-              {footers.map(footer => (
-                <Grid item xs={12} md={3} key={footer.title} className={classes.siteMapItem}>
-                  {isDesktop && (
-                    <div>
-                      <Typography variant="h6" className={classes.title} color="textPrimary" gutterBottom>
-                        {footer.title}
-                      </Typography>
-                      <ul>
-                        {footer.description.map((item, index) => (
-                          <li key={item}>
-                            <Link
-                              href={footer.link[index]}
-                              variant="subtitle1"
-                              color="textSecondary"
-                              underline="hover"
-                            >
-                              {item}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  {isMobile && (
-                    <Accordion
-                      square
-                      classes={{
-                        root: classes.accordionRoot,
-                      }}
-                    >
-                      <AccordionSummary
-                        expandIcon={<ExpandMoreIcon className={classes.accordionIcon} />}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                        classes={{
-                          content: classes.accordionContent,
-                        }}
-                      >
-                        <strong>
-                          {footer.title}
-                        </strong>
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <ul>
-                          {footer.description.map((item, index) => (
-                            <li key={item}>
-                              <Link
-                                href={footer.link[index]}
-                                variant="subtitle1"
-                                color="textSecondary"
-                                underline="hover"
-                              >
-                                {item}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </AccordionDetails>
-                    </Accordion>
-                  )}
+              {footers.map((footer) => (
+                <Grid item xs={12} md={12} key={footer.title}>
+                  <Typography variant="h6" className={classes.title} gutterBottom>
+                    {footer.title}
+                  </Typography>
+                  <ul>
+                    {footer.description.map((item, index) => (
+                      <li key={item}>
+                        <Link href={footer.link[index]} variant="subtitle1" color="textSecondary">
+                          {item}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </Grid>
               ))}
             </Grid>
           </Grid>
-          <Grid item xs={12} md={3}>
+          {/* <Grid item xs={12} md={3}>
             <div className={classes.socmed}>
               <IconButton aria-label="FB" className={classes.margin} size="small">
                 <i className="ion-logo-twitter" />
@@ -155,7 +99,7 @@ function Footer(props) {
                 <i className="ion-logo-linkedin" />
               </IconButton>
             </div>
-          </Grid>
+          </Grid> */}
         </Grid>
         {isMobile && (
           <div className={align.textCenter}>
